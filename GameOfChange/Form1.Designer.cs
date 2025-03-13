@@ -54,19 +54,21 @@
             resultBox5 = new TextBox();
             resultBox6 = new TextBox();
             panel3 = new Panel();
+            dice6 = new TextBox();
+            dice5 = new TextBox();
+            dice3 = new TextBox();
+            dice4 = new TextBox();
+            valueBox = new TextBox();
+            dice2 = new TextBox();
             numbersText = new Label();
             betBox6 = new TextBox();
+            buttonbahis = new Button();
             betBox5 = new TextBox();
+            label2 = new Label();
             betBox4 = new TextBox();
             betBox3 = new TextBox();
             betBox2 = new TextBox();
             betBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            buttonbahis = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -187,9 +189,9 @@
             informationText3.ForeColor = SystemColors.ButtonHighlight;
             informationText3.Location = new Point(21, 67);
             informationText3.Name = "informationText3";
-            informationText3.Size = new Size(94, 18);
+            informationText3.Size = new Size(106, 18);
             informationText3.TabIndex = 3;
-            informationText3.Text = "3 Zara 3 Katı";
+            informationText3.Text = "3 Zara 1.6 Katı";
             // 
             // informationText5
             // 
@@ -198,9 +200,9 @@
             informationText5.ForeColor = SystemColors.ButtonHighlight;
             informationText5.Location = new Point(21, 101);
             informationText5.Name = "informationText5";
-            informationText5.Size = new Size(102, 18);
+            informationText5.Size = new Size(94, 18);
             informationText5.TabIndex = 4;
-            informationText5.Text = "5 Zara 13 Katı";
+            informationText5.Text = "5 Zara 7 Katı";
             // 
             // informationText2
             // 
@@ -222,7 +224,7 @@
             informationText4.Name = "informationText4";
             informationText4.Size = new Size(94, 18);
             informationText4.TabIndex = 3;
-            informationText4.Text = "4 Zara 6 Katı";
+            informationText4.Text = "4 Zara 3 Katı";
             // 
             // informationTextHeader
             // 
@@ -316,9 +318,12 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 64, 0);
-            panel3.Controls.Add(textBox3);
-            panel3.Controls.Add(textBox1);
-            panel3.Controls.Add(textBox2);
+            panel3.Controls.Add(dice6);
+            panel3.Controls.Add(dice5);
+            panel3.Controls.Add(dice3);
+            panel3.Controls.Add(dice4);
+            panel3.Controls.Add(valueBox);
+            panel3.Controls.Add(dice2);
             panel3.Controls.Add(numbersText);
             panel3.Controls.Add(betBox6);
             panel3.Controls.Add(buttonbahis);
@@ -332,6 +337,55 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(731, 147);
             panel3.TabIndex = 10;
+            // 
+            // dice6
+            // 
+            dice6.Font = new Font("Verdana", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dice6.Location = new Point(508, 121);
+            dice6.Name = "dice6";
+            dice6.Size = new Size(212, 22);
+            dice6.TabIndex = 20;
+            // 
+            // dice5
+            // 
+            dice5.Font = new Font("Verdana", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dice5.Location = new Point(508, 92);
+            dice5.Name = "dice5";
+            dice5.Size = new Size(212, 22);
+            dice5.TabIndex = 19;
+            // 
+            // dice3
+            // 
+            dice3.Font = new Font("Verdana", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dice3.Location = new Point(508, 35);
+            dice3.Name = "dice3";
+            dice3.Size = new Size(212, 22);
+            dice3.TabIndex = 18;
+            // 
+            // dice4
+            // 
+            dice4.Font = new Font("Verdana", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dice4.Location = new Point(508, 64);
+            dice4.Name = "dice4";
+            dice4.Size = new Size(212, 22);
+            dice4.TabIndex = 17;
+            // 
+            // valueBox
+            // 
+            valueBox.Font = new Font("Segoe UI", 16.3018875F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            valueBox.Location = new Point(189, 35);
+            valueBox.Name = "valueBox";
+            valueBox.Size = new Size(302, 39);
+            valueBox.TabIndex = 15;
+            valueBox.TextChanged += textBox1_TextChanged;
+            // 
+            // dice2
+            // 
+            dice2.Font = new Font("Verdana", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            dice2.Location = new Point(508, 6);
+            dice2.Name = "dice2";
+            dice2.Size = new Size(212, 22);
+            dice2.TabIndex = 16;
             // 
             // numbersText
             // 
@@ -353,6 +407,19 @@
             betBox6.Size = new Size(40, 39);
             betBox6.TabIndex = 12;
             // 
+            // buttonbahis
+            // 
+            buttonbahis.BackColor = Color.DarkGreen;
+            buttonbahis.Font = new Font("Verdana", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            buttonbahis.ForeColor = Color.White;
+            buttonbahis.Location = new Point(347, 89);
+            buttonbahis.Name = "buttonbahis";
+            buttonbahis.Size = new Size(144, 40);
+            buttonbahis.TabIndex = 14;
+            buttonbahis.Text = "BAHİS";
+            buttonbahis.UseVisualStyleBackColor = false;
+            buttonbahis.Click += buttonbahis_Click;
+            // 
             // betBox5
             // 
             betBox5.Font = new Font("Segoe UI", 16.3018875F, FontStyle.Regular, GraphicsUnit.Point, 162);
@@ -360,6 +427,19 @@
             betBox5.Name = "betBox5";
             betBox5.Size = new Size(40, 39);
             betBox5.TabIndex = 12;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Verdana", 14.2641506F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(183, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(136, 25);
+            label2.TabIndex = 12;
+            label2.Text = "Bahis Girin:";
+            label2.Click += label2_Click;
             // 
             // betBox4
             // 
@@ -393,71 +473,11 @@
             betBox1.Size = new Size(40, 39);
             betBox1.TabIndex = 11;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 17);
-            label1.TabIndex = 11;
-            label1.Text = "label1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Verdana", 14.2641506F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label2.ForeColor = Color.WhiteSmoke;
-            label2.Location = new Point(183, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 25);
-            label2.TabIndex = 12;
-            label2.Text = "Bahis Girin:";
-            label2.Click += label2_Click;
-            // 
-            // buttonbahis
-            // 
-            buttonbahis.BackColor = Color.DarkGreen;
-            buttonbahis.Font = new Font("Verdana", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            buttonbahis.ForeColor = Color.White;
-            buttonbahis.Location = new Point(347, 89);
-            buttonbahis.Name = "buttonbahis";
-            buttonbahis.Size = new Size(144, 40);
-            buttonbahis.TabIndex = 14;
-            buttonbahis.Text = "BAHİS";
-            buttonbahis.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 16.3018875F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox1.Location = new Point(189, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(302, 39);
-            textBox1.TabIndex = 15;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 16.3018875F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox2.Location = new Point(508, 35);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(212, 39);
-            textBox2.TabIndex = 16;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Segoe UI", 16.3018875F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            textBox3.Location = new Point(508, 89);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(212, 39);
-            textBox3.TabIndex = 17;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(747, 406);
-            Controls.Add(label1);
             Controls.Add(panel3);
             Controls.Add(resultBox6);
             Controls.Add(resultBox5);
@@ -521,11 +541,13 @@
         private TextBox betBox3;
         private TextBox betBox2;
         private Label numbersText;
-        private Label label1;
         private Label label2;
         private Button buttonbahis;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox valueBox;
+        private TextBox dice2;
+        private TextBox dice4;
+        private TextBox dice5;
+        private TextBox dice3;
+        private TextBox dice6;
     }
 }
