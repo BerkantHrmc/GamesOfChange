@@ -165,9 +165,9 @@
             panel2.Controls.Add(informationText4);
             panel2.Controls.Add(informationTextHeader);
             panel2.Controls.Add(informationText1);
-            panel2.Location = new Point(520, 74);
+            panel2.Location = new Point(520, 92);
             panel2.Name = "panel2";
-            panel2.Size = new Size(226, 164);
+            panel2.Size = new Size(226, 146);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
@@ -176,7 +176,7 @@
             informationText6.AutoSize = true;
             informationText6.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText6.ForeColor = SystemColors.ButtonHighlight;
-            informationText6.Location = new Point(21, 118);
+            informationText6.Location = new Point(67, 118);
             informationText6.Name = "informationText6";
             informationText6.Size = new Size(102, 18);
             informationText6.TabIndex = 5;
@@ -187,7 +187,7 @@
             informationText3.AutoSize = true;
             informationText3.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText3.ForeColor = SystemColors.ButtonHighlight;
-            informationText3.Location = new Point(21, 67);
+            informationText3.Location = new Point(67, 67);
             informationText3.Name = "informationText3";
             informationText3.Size = new Size(106, 18);
             informationText3.TabIndex = 3;
@@ -198,7 +198,7 @@
             informationText5.AutoSize = true;
             informationText5.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText5.ForeColor = SystemColors.ButtonHighlight;
-            informationText5.Location = new Point(21, 101);
+            informationText5.Location = new Point(67, 101);
             informationText5.Name = "informationText5";
             informationText5.Size = new Size(94, 18);
             informationText5.TabIndex = 4;
@@ -209,7 +209,7 @@
             informationText2.AutoSize = true;
             informationText2.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText2.ForeColor = SystemColors.ButtonHighlight;
-            informationText2.Location = new Point(21, 50);
+            informationText2.Location = new Point(67, 50);
             informationText2.Name = "informationText2";
             informationText2.Size = new Size(106, 18);
             informationText2.TabIndex = 4;
@@ -220,7 +220,7 @@
             informationText4.AutoSize = true;
             informationText4.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText4.ForeColor = SystemColors.ButtonHighlight;
-            informationText4.Location = new Point(21, 84);
+            informationText4.Location = new Point(67, 84);
             informationText4.Name = "informationText4";
             informationText4.Size = new Size(94, 18);
             informationText4.TabIndex = 3;
@@ -231,7 +231,7 @@
             informationTextHeader.AutoSize = true;
             informationTextHeader.Font = new Font("Arial", 12.2264156F, FontStyle.Bold, GraphicsUnit.Point, 162);
             informationTextHeader.ForeColor = SystemColors.ButtonHighlight;
-            informationTextHeader.Location = new Point(3, 5);
+            informationTextHeader.Location = new Point(49, 5);
             informationTextHeader.Name = "informationTextHeader";
             informationTextHeader.Size = new Size(95, 21);
             informationTextHeader.TabIndex = 0;
@@ -243,7 +243,7 @@
             informationText1.AutoSize = true;
             informationText1.Font = new Font("Arial", 10.18868F, FontStyle.Bold);
             informationText1.ForeColor = SystemColors.ButtonHighlight;
-            informationText1.Location = new Point(21, 33);
+            informationText1.Location = new Point(67, 33);
             informationText1.Name = "informationText1";
             informationText1.Size = new Size(84, 18);
             informationText1.TabIndex = 3;

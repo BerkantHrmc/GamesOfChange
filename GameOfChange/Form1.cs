@@ -34,7 +34,8 @@ namespace GameOfChange
         private void nasýlOynanýrToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Altý zarýn altýsýný da tuttur büyük ödülü kap! " +
-                "2 tutan ve üstü için ödüller ekranda gözükmektedir.", "Nasýl Oyanýr ? "
+                "2 tutan ve üstü için ödüller ekranda gözükmektedir.Minimum iddia tutarý : 30 TL Maksimum iddia tutarý :" +
+                 "100 bin TL. Bet numaralarýný 1 ile 6 arasý rakamlarla doldur zarlar atýlsýn ödüller kapýlsýn.", "Nasýl Oyanýr ? "
                 , MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -73,9 +74,9 @@ namespace GameOfChange
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            int value;
+            int.TryParse(valueBox.Text, out value);
             
-
-            int value = Convert.ToInt32(valueBox.Text);
 
 
             dice2.Text = "Ýki zar : " + (value * 1.3).ToString("F2");
@@ -88,7 +89,39 @@ namespace GameOfChange
 
         private void buttonbahis_Click(object sender, EventArgs e)
         {
-            
+            int[] betPlay = new int[6];
+
+            // 6 farklý TextBox'ý bir dizi içine aldým
+            TextBox[] betBoxes = { betBox1, betBox2, betBox3, betBox4, betBox5, betBox6 };
+            TextBox[] resultBoxes = { resultBox1, resultBox2, resultBox3, resultBox4, resultBox5, resultBox6 };
+            //bunu textbox dizisiine atýyorum çünkü 190-210 satýrlarý arasýnda yeþil kutularý sayarken kullanacaðým
+            int greenBoxCount = 0; // yeþil kutu sayýsýný buna atacaðým
+
+            int value2;
+            if (!int.TryParse(valueBox.Text,out value2) || value2 <30 || value2 > 100000)
+            {
+                MessageBox.Show("Lütfen 30 TL ile 100 bin TL arasý deðerde bir iddia oluþturun.","Miktar Hatasý"
+                    ,MessageBoxButtons.OK);
+                    return;
+            }
+
+            for (int k = 0; k < 6; k++)
+            {
+                if (!int.TryParse(betBoxes[k].Text, out betPlay[k]) || betPlay[k] < 1 || betPlay[k] > 6)
+                {
+                    MessageBox.Show($"Lütfen {k + 1}. kutu için 1 ile 6 arasýnda bir sayý girin!",
+                                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Eðer hata olursa iþlemi durdur
+                }
+            }
+
+            // Geçerli sayýlar yazdýrýlýyor
+            string oynananSayilar = string.Join(", ", betPlay); //String join dizideki elemanlarý birleþtirir.
+            MessageBox.Show($"Oynanan Sayýlar: {oynananSayilar}","Ýddia baþarýyla oluþturuldu",
+                MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+
+
+
             Random rndm = new Random();
             int[] betNumbers = new int[6]; // tek tek deðiþken oluþturmak yerine
 
@@ -97,10 +130,6 @@ namespace GameOfChange
             {
                 betNumbers[i] = rndm.Next(1, 7);
             }
-
-           
-            
-            
 
             resultBox1.Text = betNumbers[0].ToString();
             resultBox2.Text = betNumbers[1].ToString();
@@ -156,6 +185,39 @@ namespace GameOfChange
             else
             {
                 resultBox6.BackColor = Color.Red;
+            }
+
+            for (int k = 0;k<6;k++ )
+            {
+                if (resultBoxes[k].BackColor == Color.Green)
+                {
+                    greenBoxCount++;
+                }
+            }
+
+            switch (greenBoxCount)
+            {
+                case 1:
+                    MessageBox.Show("Bir sayý tutturdunuz ve paranýz iade oldu.");
+                    break;
+                case 2:
+                    MessageBox.Show($"Ýki sayý tutturdunuz {dice2.Text}  ");
+                    break;
+                case 3:
+                    MessageBox.Show($"Üç sayý tutturdunuz :{dice3.Text}  ");
+                    break;
+                case 4:
+                    MessageBox.Show($"Dört sayý tutturdunuz {dice4.Text}  ");
+                    break;
+                case 5:
+                    MessageBox.Show($"Beþ sayý tutturdunuz {dice5.Text}  ");
+                    break;
+                case 6:
+                    MessageBox.Show($"Altý sayý tutturdunuz {dice6.Text}  ");
+                    break;
+                default:
+                    MessageBox.Show("Malesef hiçbir sayý tutmadý -_-");
+                    break;
             }
 
 
