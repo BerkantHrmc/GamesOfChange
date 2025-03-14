@@ -73,9 +73,9 @@ namespace GameOfChange
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            int value;
+            int.TryParse(valueBox.Text, out value);
             
-
-            int value = Convert.ToInt32(valueBox.Text);
 
 
             dice2.Text = "Ýki zar : " + (value * 1.3).ToString("F2");
@@ -88,7 +88,38 @@ namespace GameOfChange
 
         private void buttonbahis_Click(object sender, EventArgs e)
         {
-            
+            int[] betPlay = new int[6];
+
+            // 6 farklý TextBox'ý bir dizi içine aldým
+            TextBox[] betBoxes = { betBox1, betBox2, betBox3, betBox4, betBox5, betBox6 };
+            int value2;
+            if (!int.TryParse(valueBox.Text,out value2) || value2 <30 || value2 > 100000)
+            {
+                MessageBox.Show("Lütfen 30 TL ile 100 bin TL arasý deðerde bir iddia oluþturun.","Miktar Hatasý"
+                    ,MessageBoxButtons.OK);
+                    return;
+            }
+
+            for (int k = 0; k < 6; k++)
+            {
+                if (!int.TryParse(betBoxes[k].Text, out betPlay[k]) || betPlay[k] < 1 || betPlay[k] > 6)
+                {
+                    MessageBox.Show($"Lütfen {k + 1}. kutu için 1 ile 6 arasýnda bir sayý girin!",
+                                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Eðer hata olursa iþlemi durdur
+                }
+            }
+
+            // Geçerli sayýlar yazdýrýlýyor
+            string oynananSayilar = string.Join(", ", betPlay); //String join dizideki elemanlarý birleþtirir.
+            MessageBox.Show($"Oynanan Sayýlar: {oynananSayilar}","Ýddia baþarýyla oluþturuldu");
+
+
+
+
+
+
+
             Random rndm = new Random();
             int[] betNumbers = new int[6]; // tek tek deðiþken oluþturmak yerine
 
