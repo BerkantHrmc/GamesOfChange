@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             karanlıkModToolStripMenuItem = new ToolStripMenuItem();
@@ -69,12 +70,17 @@
             betBox3 = new TextBox();
             betBox2 = new TextBox();
             betBox1 = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            sesToolStripMenuItem = new ToolStripMenuItem();
+            açToolStripMenuItem = new ToolStripMenuItem();
+            kapatToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -473,11 +479,42 @@
             betBox1.Size = new Size(40, 39);
             betBox1.TabIndex = 11;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(18, 18);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sesToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(193, 50);
+            contextMenuStrip1.Opening += contextMenuStrip1_Opening;
+            // 
+            // sesToolStripMenuItem
+            // 
+            sesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { açToolStripMenuItem, kapatToolStripMenuItem });
+            sesToolStripMenuItem.Name = "sesToolStripMenuItem";
+            sesToolStripMenuItem.Size = new Size(192, 22);
+            sesToolStripMenuItem.Text = "Ses ";
+            sesToolStripMenuItem.Click += sesToolStripMenuItem_Click;
+            // 
+            // açToolStripMenuItem
+            // 
+            açToolStripMenuItem.Name = "açToolStripMenuItem";
+            açToolStripMenuItem.Size = new Size(198, 24);
+            açToolStripMenuItem.Text = "Aç";
+            açToolStripMenuItem.Click += açToolStripMenuItem_Click;
+            // 
+            // kapatToolStripMenuItem
+            // 
+            kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
+            kapatToolStripMenuItem.Size = new Size(198, 24);
+            kapatToolStripMenuItem.Text = "Kapat";
+            kapatToolStripMenuItem.Click += kapatToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(747, 406);
+            ContextMenuStrip = contextMenuStrip1;
             Controls.Add(panel3);
             Controls.Add(resultBox6);
             Controls.Add(resultBox5);
@@ -503,6 +540,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -549,5 +587,9 @@
         private TextBox dice5;
         private TextBox dice3;
         private TextBox dice6;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem sesToolStripMenuItem;
+        private ToolStripMenuItem açToolStripMenuItem;
+        private ToolStripMenuItem kapatToolStripMenuItem;
     }
 }

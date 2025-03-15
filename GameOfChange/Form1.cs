@@ -1,4 +1,6 @@
 using System.Runtime.Intrinsics.Arm;
+using System.Media;
+using System.Security.Cryptography.X509Certificates; // Ses çalma için gerekli kütüphane
 
 namespace GameOfChange
 {
@@ -51,12 +53,41 @@ namespace GameOfChange
 
 
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+            sesAc();
+
         }
 
+
+
+        public void sesAc()
+        {
+            string filePath = @"C:\Users\Berkant\Desktop\Sesler\hopeful.wav";
+            SoundPlayer arkaSes = new SoundPlayer(filePath);
+            arkaSes.Play();
+        }
+
+        public void sesKapat()
+        {
+            string filePath = @"C:\Users\Berkant\Desktop\Sesler\hopeful.wav";
+            SoundPlayer arkaSes = new SoundPlayer(filePath);
+            arkaSes.Stop();
+        }
+
+        public void zarSesi ()
+        {
+            String filePath2 = @"C:\Users\Berkant\Desktop\Sesler\zarSesi.wav";
+            SoundPlayer zarSesi = new SoundPlayer(filePath2);
+            zarSesi.PlaySync();
+        }
+        public void buttonClickSound ()
+        {
+            String filepath3 = @"C:\Users\Berkant\Desktop\Sesler\selectButton.wav";
+            SoundPlayer buttonSelectSound = new SoundPlayer(filepath3);
+            buttonSelectSound.Play();
+        }
         private void informationText_Click_1(object sender, EventArgs e)
         {
 
@@ -76,7 +107,7 @@ namespace GameOfChange
         {
             int value;
             int.TryParse(valueBox.Text, out value);
-            
+
 
 
             dice2.Text = "Ýki zar : " + (value * 1.3).ToString("F2");
@@ -94,15 +125,16 @@ namespace GameOfChange
             // 6 farklý TextBox'ý bir dizi içine aldým
             TextBox[] betBoxes = { betBox1, betBox2, betBox3, betBox4, betBox5, betBox6 };
             TextBox[] resultBoxes = { resultBox1, resultBox2, resultBox3, resultBox4, resultBox5, resultBox6 };
-            //bunu textbox dizisiine atýyorum çünkü 190-210 satýrlarý arasýnda yeþil kutularý sayarken kullanacaðým
+            //bunu textbox dizisiine atýyorum çünkü 176-232 satýrlarý arasýnda yeþil kutularý sayarken kullanacaðým
             int greenBoxCount = 0; // yeþil kutu sayýsýný buna atacaðým
-
             int value2;
-            if (!int.TryParse(valueBox.Text,out value2) || value2 <30 || value2 > 100000)
+
+            buttonClickSound();
+            if (!int.TryParse(valueBox.Text, out value2) || value2 < 30 || value2 > 100000)
             {
-                MessageBox.Show("Lütfen 30 TL ile 100 bin TL arasý deðerde bir iddia oluþturun.","Miktar Hatasý"
-                    ,MessageBoxButtons.OK);
-                    return;
+                MessageBox.Show("Lütfen 30 TL ile 100 bin TL arasý deðerde bir iddia oluþturun.", "Miktar Hatasý"
+                    , MessageBoxButtons.OK);
+                return;
             }
 
             for (int k = 0; k < 6; k++)
@@ -115,10 +147,12 @@ namespace GameOfChange
                 }
             }
 
+            
+
             // Geçerli sayýlar yazdýrýlýyor
             string oynananSayilar = string.Join(", ", betPlay); //String join dizideki elemanlarý birleþtirir.
-            MessageBox.Show($"Oynanan Sayýlar: {oynananSayilar}","Ýddia baþarýyla oluþturuldu",
-                MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            MessageBox.Show($"Oynanan Sayýlar: {oynananSayilar}", "Ýddia baþarýyla oluþturuldu",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
 
@@ -131,6 +165,7 @@ namespace GameOfChange
                 betNumbers[i] = rndm.Next(1, 7);
             }
 
+            zarSesi();
             resultBox1.Text = betNumbers[0].ToString();
             resultBox2.Text = betNumbers[1].ToString();
             resultBox3.Text = betNumbers[2].ToString();
@@ -138,7 +173,7 @@ namespace GameOfChange
             resultBox5.Text = betNumbers[4].ToString();
             resultBox6.Text = betNumbers[5].ToString();
 
-            if (resultBox1.Text == betBox1.Text )
+            if (resultBox1.Text == betBox1.Text)
             {
                 resultBox1.BackColor = Color.Green;
             }
@@ -187,7 +222,7 @@ namespace GameOfChange
                 resultBox6.BackColor = Color.Red;
             }
 
-            for (int k = 0;k<6;k++ )
+            for (int k = 0; k < 6; k++)
             {
                 if (resultBoxes[k].BackColor == Color.Green)
                 {
@@ -220,7 +255,27 @@ namespace GameOfChange
                     break;
             }
 
+            sesAc();
 
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void kapatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sesKapat();
+        }
+
+        private void açToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sesAc();
+        }
+        private void sesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
