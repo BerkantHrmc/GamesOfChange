@@ -484,28 +484,28 @@
             contextMenuStrip1.ImageScalingSize = new Size(18, 18);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sesToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(193, 50);
+            contextMenuStrip1.Size = new Size(101, 26);
             contextMenuStrip1.Opening += contextMenuStrip1_Opening;
             // 
             // sesToolStripMenuItem
             // 
             sesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { açToolStripMenuItem, kapatToolStripMenuItem });
             sesToolStripMenuItem.Name = "sesToolStripMenuItem";
-            sesToolStripMenuItem.Size = new Size(192, 22);
+            sesToolStripMenuItem.Size = new Size(100, 22);
             sesToolStripMenuItem.Text = "Ses ";
             sesToolStripMenuItem.Click += sesToolStripMenuItem_Click;
             // 
             // açToolStripMenuItem
             // 
             açToolStripMenuItem.Name = "açToolStripMenuItem";
-            açToolStripMenuItem.Size = new Size(198, 24);
+            açToolStripMenuItem.Size = new Size(116, 24);
             açToolStripMenuItem.Text = "Aç";
             açToolStripMenuItem.Click += açToolStripMenuItem_Click;
             // 
             // kapatToolStripMenuItem
             // 
             kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
-            kapatToolStripMenuItem.Size = new Size(198, 24);
+            kapatToolStripMenuItem.Size = new Size(116, 24);
             kapatToolStripMenuItem.Text = "Kapat";
             kapatToolStripMenuItem.Click += kapatToolStripMenuItem_Click;
             // 

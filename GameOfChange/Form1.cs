@@ -110,11 +110,11 @@ namespace GameOfChange
 
 
 
-            dice2.Text = "Ýki zar : " + (value * 1.3).ToString("F2");
-            dice3.Text = "Üç zar : " + (value * 1.6).ToString("F2");
-            dice4.Text = "Dört zar : " + (value * 2).ToString("F2");
-            dice5.Text = "Beþ zar : " + (value * 7).ToString("F2");
-            dice6.Text = "Altý zar : " + (value * 25).ToString("F2");
+            dice2.Text = "Ýki zara : " + (value * 1.3).ToString("F2");
+            dice3.Text = "Üç zara : " + (value * 1.6).ToString("F2");
+            dice4.Text = "Dört zara : " + (value * 2).ToString("F2");
+            dice5.Text = "Beþ zara : " + (value * 7).ToString("F2");
+            dice6.Text = "Altý zara : " + (value * 25).ToString("F2");
         }
 
 
