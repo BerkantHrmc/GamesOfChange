@@ -32,7 +32,7 @@ namespace GameOfChange
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-
+        //singleton
         private void nasýlOynanýrToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Altý zarýn altýsýný da tuttur büyük ödülü kap! " +
